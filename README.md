@@ -28,7 +28,7 @@ Then, you will recieve API token and link to the bot. Follow this link, start th
 
 ![](assets/setup/3.png)
 
-And now, follow this link: https://api.telegram.org/bot<TOKEN>/getUpdates . Do not forget to replace <TOKEN> with your API token, that BotFather gave you. 
+And now, follow this link: https://api.telegram.org/botTOKEN/getUpdates . Do not forget to replace TOKEN with your API token, that BotFather gave you. 
 You will see output in JSON. Copy value of id as shown in the picture
 
 ![](assets/setup/4.png)

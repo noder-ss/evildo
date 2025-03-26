@@ -48,4 +48,4 @@ Happy hacking!
 
 ### Contacts
 
-If you have any questions, ideas, features, collaborative proposals, you can find me [here](https://t.me/gentuxx)
+If you have any questions, ideas, features, collaborative proposals or if you've found a bug, you can find me [here](https://t.me/gentuxx)

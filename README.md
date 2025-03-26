@@ -9,6 +9,12 @@ A tool that simply sets alias to sudo command, then sends captured passwords and
 - If there is no internet connection, it disguises itself as a sudo command to prevent data loss  
 - After stealing the passwords, the script covers its tracks and deletes all associated files
 
+### Coming soon
+
+- Reverse shell (long polling)
+- /etc/passwd + /etc/shadow grabbing (if root)
+- SSH setting
+
 ### Setup 
 
 I am not responsible for any illegal activities commited using this tool. This tool is intended for educational purposes only. Use it at your own risk.

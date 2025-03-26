@@ -45,3 +45,7 @@ If everything is ok, you will recieve a test message
 
 Then, return to the terminal, it should create another script - 'evildo.sh'. You should execute it on victim's PC, and all the gathered information will be in your Telegram bot.\n
 Happy hacking!
+
+### Contacts
+
+If you have any questions, ideas, features, collaborative proposals, you can find me [here](https://t.me/gentuxx)

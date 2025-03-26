@@ -43,7 +43,7 @@ If everything is ok, you will recieve a test message
 
 ![](assets/setup/6.png)
 
-Then, return to the terminal, it should create another script - 'evildo.sh'. You should execute it on victim's PC, and all the gathered information will be in your Telegram bot.\n
+Then, return to the terminal, it should create another script - 'evildo.sh'. You should execute it on victim's PC, and all the gathered information will be in your Telegram bot.
 Happy hacking!
 
 ### Contacts

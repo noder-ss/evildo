@@ -1,7 +1,11 @@
-## EvilDO - Creditshifter for linux systems
+## EvilDO - Creditshifter for Linux systems
 A tool that simply sets alias to sudo command, then sends captured passwords and information to Telegram bot(created by BotFather) and then covers up all the traces.
 
 ![](assets/screenshot.png)
+
+### Features
+
+- edititin
 
 ### Setup 
 

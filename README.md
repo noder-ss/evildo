@@ -5,7 +5,7 @@ A tool that simply sets alias to sudo command, then sends captured passwords and
 
 ### Features
 
-- edititin
+- 
 
 ### Setup 
 

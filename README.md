@@ -22,12 +22,13 @@ For more details, press 'i' when selecting a specific option in the script.
 ### Coming soon
 
 - Reverse shell (v3)
+- New powerful C2
 - DDOS Kit
 - Fakeuser setting
 - Screen capture
 - Camera capture
 - Cookie capture
-- Advanced сontrol through the Telegram bot
+- Advanced сontrol
 - SSH setting
 
 ### Setup 
